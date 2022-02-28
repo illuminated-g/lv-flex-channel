@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2022-01-27 20:40:39" Modified_Date="2022-02-27 21:03:52" Creator="Localization Tester" Comments="" ID="d24281680e6c5ee77abbade37e86b214">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2022-01-27 20:40:39" Modified_Date="2022-02-27 21:24:38" Creator="Localization Tester" Comments="" ID="9af7501946d4797469dbc1a833f0fe64">
   <Library_General_Settings>
     <Package_File_Name>IlluminatedG_lib_FlexChannels</Package_File_Name>
-    <Library_Version>2.0.0.17</Library_Version>
+    <Library_Version>2.0.0.19</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>Channels</Library_Source_Folder>
     <Library_Output_Folder>..\build\vip</Library_Output_Folder>
@@ -27,17 +27,19 @@
     </Custom_Action_VIs>
     <VI_Package_Configuration_File>FlexChannels.vipc</VI_Package_Configuration_File>
     <Description>
-      <One_Line_Description_Summary>FlexChannels provide both lossy and lossless reader endpoints for a single channel.</One_Line_Description_Summary>
-      <Description>Adds a new Channel template to the create channel dialog in LabVIEW. This combines the behavior of several other templates and provides Tag-like endpoints as well as lossless streaming endpoints that can both be used with the same channel wire. A monitoring status endpoint is also available so code can monitor the status of value updates and the queue sizes of all lossless readers.
+      <One_Line_Description_Summary>New Channel template where readers determine mechanism: lossy, lossless, or event-driven and lossless readers can be restartable.</One_Line_Description_Summary>
+      <Description>Adds a new Channel template to the create channel dialog in LabVIEW. This combines the behavior of several other templates. Multiple communication mechanisms can be used with the same channel wire and the reader determines the mechanism. A monitoring status endpoint is also available so code can monitor the status of value updates and the queue sizes of all lossless readers.
 
-If using a single lossless reader, performance will be between the existing High Speed Stream and the standard Stream channel templates. Since the channel can be forked to multiple readers, it is possible for the readers to influence the performance of each other.
+If using a single lossless reader, performance will be comparable to the existing High Speed Stream template. Since the channel can be forked to multiple readers, it is possible for the readers to influence the performance of each other and of the writer. Each lossless reader endpoint gets its own dedicated queue and can specify the maximum queue depth individually. Once a queue is full, the timing of the reader will dictate the timing of the writer.
 
-Each lossless reader endpoint gets its own dedicated queue and can specify the maximum queue depth individually. Lossy readers pull from a shared DVR. There is also a status endpoint that can be used to monitor the status of all active lossless endpoint queues as well as the timing info for the last update.
+Lossy readers can be used when only the latest value is important, similar to notifiers/tags. Lossy readers can be configured to wait for the next new element with a timeout.
 
-There are no palettes for this package, interactions with channels are done from the Right-Click -&gt; Create -&gt; Channel Reader/Writer menu.</Description>
+Event-based communication is also possible with an endpoint that returns an event registration. Events also perform lossless transmission, albeit with less control, so care should be taken and tests done to ensure acceptable performance for higher bandwidth communication. Events are perfectly suited for configuration and command style communication.
+
+There are no palettes for this package, interactions with channels are done from the Right-Click -&gt; Create -&gt; Channel Reader/Writer menu. Several simpler examples are included but don't utilize the full channel process present in LabVIEW. For more extensive examples check out IG Flex Channels Examples.</Description>
       <Copyright/>
       <Packager>Derrick Bommarito</Packager>
-      <URL>https://github.com/illuminated-g/lv-FlexBlocks</URL>
+      <URL>https://github.com/illuminated-g/lv-flex-channel</URL>
       <Release_Notes>- Added ability for lossless reader endpoints to be restarted
 - Added event registration endpoint
 - Fix auto-indexing in writer for when data type is array
