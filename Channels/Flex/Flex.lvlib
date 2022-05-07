@@ -49,6 +49,7 @@
 			<Item Name="Element Info.ctl" Type="VI" URL="../Element Info.ctl"/>
 			<Item Name="Queue Data.ctl" Type="VI" URL="../Queue Data.ctl"/>
 			<Item Name="Queue Flags.ctl" Type="VI" URL="../Queue Flags.ctl"/>
+			<Item Name="Writer Data.ctl" Type="VI" URL="../Writer Data.ctl"/>
 		</Item>
 		<Item Name="Ops" Type="Folder">
 			<Item Name="Init Channel.vi" Type="VI" URL="../Init Channel.vi"/>
@@ -60,6 +61,7 @@
 		</Item>
 		<Item Name="))Channel.vi" Type="VI" URL="../))Channel.vi"/>
 		<Item Name="Check Room in Queues.vi" Type="VI" URL="../Check Room in Queues.vi"/>
+		<Item Name="Enable Lossy.vi" Type="VI" URL="../Enable Lossy.vi"/>
 	</Item>
 	<Item Name="Public" Type="Folder">
 		<Property Name="NI.LibItem.Scope" Type="Int">1</Property>
