@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
-<Project Type="Project" LVVersion="20008000">
+<Project Type="Project" LVVersion="22302003">
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
@@ -11,6 +11,9 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
+		<Item Name="Benchmark" Type="Folder">
+			<Item Name="Single Unbounded.vi" Type="VI" URL="../Channels/Benchmark/Single Unbounded.vi"/>
+		</Item>
 		<Item Name="Examples" Type="Folder">
 			<Item Name="SubVIs" Type="Folder"/>
 			<Item Name="Event Demo.vi" Type="VI" URL="../Channels/Examples/Event Demo.vi"/>

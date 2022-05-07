@@ -1,7 +1,7 @@
-<VI_Package_Builder_Settings Version="2020.1" Created_Date="2022-01-27 20:40:39" Modified_Date="2022-02-28 13:04:59" Creator="Localization Tester" Comments="" ID="51d0ef57dd0102b5b791ca7879c70674">
+<VI_Package_Builder_Settings Version="2020.1" Created_Date="2022-01-27 20:40:39" Modified_Date="2022-03-01 17:26:32" Creator="Localization Tester" Comments="" ID="75892cbed85380a6815071040741c8e1">
   <Library_General_Settings>
     <Package_File_Name>IlluminatedG_lib_FlexChannels</Package_File_Name>
-    <Library_Version>2.0.0.20</Library_Version>
+    <Library_Version>2.0.0.21</Library_Version>
     <Auto_Increment_Version>false</Auto_Increment_Version>
     <Library_Source_Folder>Channels</Library_Source_Folder>
     <Library_Output_Folder>..\build\vip</Library_Output_Folder>
@@ -30,7 +30,7 @@
       <One_Line_Description_Summary>New Channel template where readers determine mechanism: lossy, lossless, or event-driven and lossless readers can be restartable.</One_Line_Description_Summary>
       <Description>Adds a new Channel template to the create channel dialog in LabVIEW. This combines the behavior of several other templates. Multiple communication mechanisms can be used with the same channel wire and the reader determines the mechanism. A monitoring status endpoint is also available so code can monitor the status of value updates and the queue sizes of all lossless readers.
 
-If using a single lossless reader, performance will be comparable to the existing High Speed Stream template. Since the channel can be forked to multiple readers, it is possible for the readers to influence the performance of each other and of the writer. Each lossless reader endpoint gets its own dedicated queue and can specify the maximum queue depth individually. Once a queue is full, the timing of the reader will dictate the timing of the writer.
+Since the channel can be forked to multiple readers, it is possible for the readers to influence the performance of each other and of the writer. Each lossless reader endpoint gets its own dedicated queue and can specify the maximum queue depth individually. Once a queue is full, the timing of the reader will dictate the timing of the writer.
 
 Lossy readers can be used when only the latest value is important, similar to notifiers/tags. Lossy readers can be configured to wait for the next new element with a timeout.
 
@@ -40,7 +40,11 @@ There are no palettes for this package, interactions with channels are done from
       <Copyright/>
       <Packager>Derrick Bommarito</Packager>
       <URL>https://github.com/illuminated-g/lv-flex-channel</URL>
-      <Release_Notes>- Added ability for lossless reader endpoints to be restarted
+      <Release_Notes>2.0.0.20's change log
+- Fix erroneous claim in package description about throughput compared to high speed stream channel template due to the new features added.
+
+Including 2.0.0.19's change log:
+- Added ability for lossless reader endpoints to be restarted
 - Added event registration endpoint
 - Fix auto-indexing in writer for when data type is array
 - Add Pause status to channel (similar to Data Valid/Invalid mechanisms)
